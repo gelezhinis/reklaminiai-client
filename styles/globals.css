@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-image: radial-gradient(#f3f1fa, #ebe6fc, #d5c8fa,  #cfbefd);
 }
 
 a {
@@ -24,3 +25,47 @@ a {
     background: black;
   }
 }
+
+.main-slide {
+  margin-top: 2%;
+  width: 50%;
+}
+
+.carousel .slider-wrapper {
+  width: 50%;
+}
+
+.carousel .thumbs-wrapper {
+  margin: 0 !important;
+}
+
+.carousel .thumb {
+  height: 50px;
+  overflow: hidden;
+}
+
+
+.carousel .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+}
+
+ul.thumbs.animated {
+  padding: 0;
+}
+
+.carousel {
+  text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+  .main-slide {
+    padding-top: 1.5%;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+

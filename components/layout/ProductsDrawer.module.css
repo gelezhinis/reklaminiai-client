@@ -1,0 +1,103 @@
+.drawer {
+  height: 3rem;
+  background-color: #fa1a74;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-out;
+  position: relative;
+}
+
+.drawer.open {
+  height: 3.5rem;
+  transform: translateY(0%);
+  z-index: 9;
+  /* position: absolute; */
+}
+
+.drawerList {
+  margin-left: -2.5rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: purple;
+  font-size: clamp(0.85rem, -0.875rem + 3vw, 1.15rem);
+  margin-top: 0;
+  height: 100%;
+}
+.drawerList li {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.drawerList li a {
+  line-height: 1.3rem;
+}
+
+.drawerList li:hover {
+  color: rgb(172, 101, 172);
+}
+
+
+/* ---------------- */
+/* .subDrawer {
+  height: 3rem;
+  background-color: rgb(85, 168, 224);
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-out;
+  position: relative;
+}
+.subDrawer.open {
+  height: 3rem;
+  background-color: red;
+  transform: translateY(0%);
+  z-index: 9;
+}
+.subDrawerList {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: purple;
+  font-size: clamp(0.7rem, -0.875rem + 3vw, 1.2rem);
+} */
+
+
+.drawerList ul.subMenu,
+.drawerList ul.subMenu2 {
+  /* min-width: 100%; */
+  /* height: 2rem; */
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background-color: rgba(11,18,27,0.8);
+  color: white;
+  display: none;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-out;
+  position: absolute;
+  z-index: 5;
+  /* left: 0; */
+}
+
+.drawerList ul.subMenu, 
+.drawerList ul.subMenu2 {
+  top: 55px;
+}
+
+.drawerList ul.subMenu li,
+.drawerList ul.subMenu2 li {
+  list-style: none;
+}
+.drawerList li:hover ul.subMenu,
+.drawerList li:hover ul.subMenu2 {
+  display: flex;
+  transform: translateY(0%);
+  padding: 0.5rem 2rem;
+  margin-left: -2.5rem;
+}
+
+
+            

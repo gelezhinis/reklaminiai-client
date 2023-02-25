@@ -1,0 +1,100 @@
+.header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  background-image: linear-gradient(76deg, #4622a8, #4b3d70);
+  padding: 0 10%;
+  position: relative;
+  /* position: fixed; */
+}
+
+.logo {
+  font-size: 2rem;
+  color: #fa1a74;
+  font-weight: bold;
+}
+
+.logo span:nth-child(1) {
+  color: #ffc400;
+}
+.logo span:nth-child(2) {
+  color: #00c4fa;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.header li {
+  margin-left: 3rem;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.header a:hover,
+.header a:active,
+.header a.active {
+  color: #bbb0d8;
+}
+
+.header button {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 1.5rem;
+}
+
+.header button:hover {
+  cursor: pointer;
+  color: #bbb0d8;
+  border-color: #bbb0d8;
+}
+
+.logout {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.logout:hover {
+  cursor: pointer;
+  color: #bbb0d8;
+}
+
+/* .drawer {
+  height: 3rem;
+  background-color: orange;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-out;
+}
+
+.drawer.open {
+  height: 3rem;
+  transform: translateY(0%);
+  z-index: 9;
+}
+
+.drawerList {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: purple;
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+.drawerList li {
+  padding-top: 10px;
+} */
