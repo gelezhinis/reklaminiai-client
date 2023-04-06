@@ -1,0 +1,38 @@
+.social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social a {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+}
+
+.social a:visited,
+.social a:active,
+.social a.active,
+.social a:link,
+.social a:focus {
+  text-decoration: none;
+  color: #fff;
+}
+
+.social a:hover {
+  color: #4622a8;
+  background-color: #ffc400;
+  cursor: pointer;
+  transition: all 0.4s ease-in;
+}
+
+@media screen and (max-width: 768px) {
+  .social {
+    gap: 0.5rem;
+  }
+}

@@ -1,0 +1,114 @@
+.modal {
+  position: fixed;
+  left: calc(50% - 350px);
+  transform: translate(-50%, -50%);
+  z-index: 400;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px #ccc;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  width: 80%;
+  max-width: 700px;
+  transition: all 0.3s ease-in-out;
+  animation: slide-down 300ms ease-out forwards;
+}
+
+.modal.short {
+  max-width: 400px;
+  left: calc(50% - 200px);
+}
+
+.message_container {
+  height: 300px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.checkbox_container {
+  display: flex;
+}
+
+.button_container {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+}
+
+.button_container .button:first-child {
+  width: 100px;
+}
+
+.button {
+  border: 3px solid #4622a8;
+  border-radius: 4px;
+  font: inherit;
+  padding: 0.5rem;
+  width: 80px;
+  background-color: #fff;
+  color: #4622a8;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+
+.button[disabled] {
+  opacity: 0.6;
+}
+.button[disabled]:hover {
+  cursor: initial;
+  background-color: #fff;
+  color: black;
+}
+
+/* .button a {
+  text-decoration: none;
+  color: var(--secondary-dark);
+  padding: 0rem;
+} */
+
+.button a:visited,
+.button a:active,
+.button a.active,
+.button a:link,
+.button a:focus {
+  text-decoration: none;
+  color: var(--secondary-dark);
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #4622a8;
+  cursor: pointer;
+  /* border: 2px solid var(--accent); */
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .modal {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .modal {
+    width: 90vw;
+    left: 4%;
+  }
+}
