@@ -5,6 +5,7 @@ const ProductCard = (props) => {
   const {title, price, description, imagesUrl} = props;
 
   const {pr1, pr2, pr3, pr4} = price;
+  const API = process.env.NEXT_PUBLIC_API_URL;
 
   return (
     <Card>
@@ -12,7 +13,7 @@ const ProductCard = (props) => {
         <div className={classes.img_container}>
           <img
             src=
-            {`${process.env.NEXT_PUBLIC_DOMAIN}/${imagesUrl[0]}`}
+            {`${API}/${imagesUrl[0]}`}
             alt=""
           />
         </div>

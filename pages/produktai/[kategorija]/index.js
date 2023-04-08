@@ -13,11 +13,13 @@ function CategoryPage(props) {
 
   const filteredSubCat = sublinks.filter(sublink => sublink.category === props.prodCategory);
 
+  const API = process.env.NEXT_PUBLIC_API_URL;
+
   const category = props.prodCategory;
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/produktai/${category}`)
+    fetch(`${API}/produktai/${category}`)
       .then((response) => response.json())
       .then((data) => {
         setFetchedProducts(data);
@@ -70,7 +72,7 @@ export async function getStaticProps(context) {
   const { req, res, params } = context;
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_DOMAIN}/produktai/${params.kategorija}`
+    `${API}/produktai/${params.kategorija}`
   );
   const products = await response.json();
 

@@ -58,6 +58,8 @@ const ContextProvider = (props) => {
   const [width, setWidth] = useState(window.innerWidth);
   const router = useRouter();
 
+  const API = process.env.NEXT_PUBLIC_API_URL;
+
   userIsAuthenticated = !!tokenState;
 
   const windowSizeChangeHandler = () => {
@@ -81,7 +83,7 @@ const ContextProvider = (props) => {
   };
 
   const logoutHandler = useCallback(async () => {
-    await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/logout`, {
+    await fetch(`${API}/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

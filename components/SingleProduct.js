@@ -13,6 +13,8 @@ const SingleProduct = (props) => {
   const { id, title, price1, price2, price3, price4, description, imageUrl } =
     props.product;
 
+  const API = process.env.NEXT_PUBLIC_API_URL;
+
   const productEditHandler = () => {
     router.push(
       {
@@ -34,7 +36,7 @@ const SingleProduct = (props) => {
   };
 
   const productDeleteHandler = async () => {
-    await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/admin/delete-product/${id}`, {
+    await fetch(`${API}/admin/delete-product/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${ctx.token}`,

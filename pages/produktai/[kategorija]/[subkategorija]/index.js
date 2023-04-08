@@ -12,12 +12,14 @@ function SubcategoryPage(props) {
   // const {query} = useRouter();
   const router = useRouter();
 
+  const API = process.env.NEXT_PUBLIC_API_URL;
+
   const category = props.prodCategory;
   const subcategory = props.prodSubcategory;
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/produktai/${category}/${subcategory}`)
+    fetch(`${API}/produktai/${category}/${subcategory}`)
       .then((response) => response.json())
       .then((data) => {
         setFetchedProducts(data);
@@ -63,7 +65,7 @@ export async function getStaticProps(context) {
   const { params } = context;
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_DOMAIN}/produktai/${params.kategorija}/${params.subkategorija}`
+    `${API}/produktai/${params.kategorija}/${params.subkategorija}`
   );
   const products = await response.json();
 
@@ -87,7 +89,7 @@ export async function getStaticPaths() {
   //   params: { subkategorija: subcateg },
   // }));
 
-  const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/produktai`);
+  const response = await fetch(`${API}/produktai`);
   const products = await response.json();
 
   

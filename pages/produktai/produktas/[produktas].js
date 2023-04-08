@@ -6,12 +6,14 @@ function ProductPage(props) {
   const [isLoading, setIsLoading] = useState(false);
   const [fetchedProduct, setFetchedProduct] = useState(props.product);
 
+  const API = process.env.NEXT_PUBLIC_API_URL;
+
   const productId = props.productId;
 
   useEffect(() => {
     // console.log('USE_EFFECT');
     setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/produktai/produktas/${productId}`)
+    fetch(`${API}/produktai/produktas/${productId}`)
       .then((response) => response.json())
       .then((data) => {
         setFetchedProduct(data);
@@ -33,7 +35,7 @@ export async function getStaticProps(context) {
   const prodId = params.produktas;
 
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_DOMAIN}/produktai/produktas/${prodId}`
+    `${API}/produktai/produktas/${prodId}`
   );
 
   const product = await response.json();
@@ -48,7 +50,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/produktai`);
+  const response = await fetch(`${API}/produktai`);
   const products = await response.json();
 
   // const pathsWithParams = products.map(prod => ({params: {kategorija: prod.category, subkategorija: prod.subcategory, produktas: prod.id}}));

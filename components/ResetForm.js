@@ -7,6 +7,8 @@ import classes from './ResetForm.module.css';
 const ResetForm = (props) => {
   const [error, setError] = useState(null);
 
+  const API = process.env.NEXT_PUBLIC_API_URL;
+
   const passwordInput = useRef();
   const confPasswordInput = useRef();
 
@@ -20,7 +22,7 @@ const ResetForm = (props) => {
       setError('Slaptažodžiai nesutampa!');
       return;
     }
-    await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/change-password`, {
+    await fetch(`${API}/change-password`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

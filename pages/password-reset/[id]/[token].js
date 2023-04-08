@@ -16,11 +16,13 @@ const ResetPasswordPage = () => {
 
   const router = useRouter();
 
+  const API = process.env.NEXT_PUBLIC_API_URL;
+
   let content;
 
   if (router.isReady) {
     const userId = router.query.id;
-    fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/user-data/${userId}`)
+    fetch(`${API}/user-data/${userId}`)
       .then((responseData) => responseData.json())
       .then((data) => {
         if (!data.userId) {

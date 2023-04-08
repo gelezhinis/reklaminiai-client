@@ -7,46 +7,10 @@ import ProductsDrawer from './ProductsDrawer';
 import classes from './MainNavigation.module.css';
 
 function MainNavigation() {
-  // const [isAdmin, setIsAdmin] = useState(false);
   const ctx = useContext(Context);
   const router = useRouter();
 
   const show = router.pathname.includes('produktai');
-
-  // useEffect(() => {
-  //   setIsAdmin(ctx.admin);
-  // }, []);
-
-  // let drawerClasses = classes.drawer;
-  // if (show) {
-  //   drawerClasses = `${classes.drawer} ${classes.open}`;
-  // }
-
-  // const logoutHandler = async () => {
-  //   await fetch('http://localhost:5000/logout', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   }).then(res => {
-  //     if (res.ok) {
-  //       return res.json();
-  //     } else {
-  //       return res.json().then(data => {
-  //         let errorMessage = 'Kažkas nepavyko. Apgailestaujame'
-  //         throw new Error(errorMessage);
-  //       })
-  //     }
-  //   }).then((responseData) => {
-  //     if (responseData.message === 'Logging out') {
-  //       ctx.logout();
-  //       router.push('/');
-  //     } else {
-  //       throw new Error('Kažkas nepavyko. Apgailestaujame')
-  //     }
-  //   }).catch(err => console.log(err));
-  // };
-
 
   return (
     <>

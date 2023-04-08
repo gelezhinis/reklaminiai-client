@@ -7,7 +7,8 @@ import {agreeText} from '../utils/agreement';
 import FormCard from './ui/FormCard';
 import classes from './AuthForm.module.css';
 
-const url = process.env.NEXT_PUBLIC_DOMAIN;
+// const url = process.env.NEXT_PUBLIC_DOMAIN;
+const API = process.env.NEXT_PUBLIC_API_URL;
 
 const AuthForm = (props) => {
   const [isLogin, setIsLogin] = useState(true);
@@ -47,7 +48,7 @@ const AuthForm = (props) => {
     const enteredEmail = emailInput.current.value;
     const enteredPassword = passwordInput.current.value;
 
-    await fetch(`${url}/admin-login`, {
+    await fetch(`${API}/admin-login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -101,7 +102,7 @@ const AuthForm = (props) => {
     const enteredConfPassword = !isLogin ? confPasswordInput.current.value : null;
 
     if (isLogin) {
-      await fetch(`${url}/user-login`, {
+      await fetch(`${API}/user-login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -153,7 +154,7 @@ const AuthForm = (props) => {
         setError(['Slaptažodžiai nesutampa.']);
         return;
       }
-        await fetch(`${url}/user-signup`, {
+        await fetch(`${API}/user-signup`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -197,7 +198,7 @@ const AuthForm = (props) => {
   const resetPassHandler = async() => {
     const enteredEmail = emailInput.current.value;
     props.onShowMessage('Tolimesnė slaptažodžio keitimo instrukcija Jums išsiųsta el. paštu.', true);
-    await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/password-reset/${enteredEmail}`);
+    await fetch(`${API}/password-reset/${enteredEmail}`);
   };
 
 

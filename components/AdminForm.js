@@ -7,28 +7,6 @@ import FormCard from './ui/FormCard';
 
 import classes from './AdminForm.module.css';
 
-// const categories = {
-//   spauda: [
-//     'Lankstinukai',
-//     'Skrajutės',
-//     'Plakatai',
-//     'Brošiūros',
-//     'Bloknotai',
-//     'Kortelės',
-//   ],
-//   rpriemones: [
-//     'Metaliniai Tušinukai',
-//     'Plastikiniai Tušinukai',
-//     'EKO Tušinukai',
-//     'Komplektai',
-//     'Pieštukai',
-//   ],
-//   apranga: ['Marškinėliai', 'Džemperiai', 'Kepurės'],
-//   veliavos: ['Reklaminės Vėliavos', 'Pagrindai', 'Vėliavos'],
-//   puodeliai: ['Keramikiniai Puodeliai', 'Termo Puodeliai', 'Gertuvės'],
-//   juosteles: ['Kaklajuostės', 'Pakabukai', 'Apyrankės'],
-//   krepsiai: ['Medžiaginiai', 'Popieriniai', 'Kuprinės'],
-// };
 
 const AdminForm = ({ product }) => {
   const [selectedCategory, setSelectedCategory] = useState([]);
@@ -36,6 +14,7 @@ const AdminForm = ({ product }) => {
   const [selectedImages, setSelectedImages] = useState([]);
 
   const ctx = useContext(Context);
+  const API = process.env.NEXT_PUBLIC_API_URL;
 
   const categoryInput = useRef();
   const subcategoryInput = useRef();
@@ -118,7 +97,7 @@ const AdminForm = ({ product }) => {
 
     // formData.append('images', selectedImages);
     if (!isEditing) {
-      fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/admin/add-product`, {
+      fetch(`${API}/admin/add-product`, {
         method: 'POST',
         headers: {
           // 'Content-Type': 'application/json',
@@ -132,7 +111,7 @@ const AdminForm = ({ product }) => {
         })
         .catch((err) => console.log(err.message));
     } else {
-      fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/admin/edit-product/`, {
+      fetch(`${API}/admin/edit-product/`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${ctx.token}`,

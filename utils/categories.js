@@ -1,31 +1,3 @@
-// export const categories = {
-//   spauda: [
-//     'Lankstinukai',
-//     'Skrajutės',
-//     'Plakatai',
-//     'Brošiūros',
-//     'Bloknotai',
-//     'Kortelės',
-//   ],
-//   rpriemones: [
-//     'Metaliniai Tušinukai',
-//     'Plastikiniai Tušinukai',
-//     'EKO Tušinukai',
-//     'Komplektai',
-//     'Pieštukai',
-//   ],
-//   apranga: ['Marškinėliai', 'Džemperiai', 'Kepurės'],
-//   veliavos: ['Reklaminės Vėliavos', 'Pagrindai', 'Vėliavos'],
-//   puodeliai: ['Keramikiniai Puodeliai', 'Termo Puodeliai', 'Gertuvės'],
-//   juosteles: ['Kaklajuostės', 'Pakabukai', 'Apyrankės'],
-//   krepsiai: ['Medžiaginiai', 'Popieriniai', 'Kuprinės'],
-//   atsvaitai: [],
-//   vokai: [],
-//   uzrasines: [],
-//   stendai: [],
-//   kiti: []
-// };
-
 export const categories = {
   spauda: [
     'lankstinukai',
