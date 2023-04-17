@@ -4,9 +4,12 @@ import { useRouter } from 'next/router';
 
 import { links, linksWithoutSubs } from '../../utils/mobile-links';
 
+
 const MobileNavLinks = (props) => {
   const [heading, setHeading] = useState('');
   const [subHeading, setSubHeading] = useState('');
+
+  const router = useRouter();
 
   return (
     <>
@@ -25,15 +28,19 @@ const MobileNavLinks = (props) => {
             <div key={index}>
               <div className="sublinks-list">
                 <h5
-                  onClick={() =>
-                    subHeading !== sublink.name
-                      ? setSubHeading(sublink.name)
-                      : setSubHeading('')
+                  onClick={() => {
+                    router.push(sublink.path);
+                    props.onProductClick();
+                  }
+                    // subHeading !== sublink.name
+                    //   ? setSubHeading(sublink.name)
+                    //   : setSubHeading('')
+                    // console.log(sublink.path)
                   }
                 >
                   {sublink.name}
                 </h5>
-                <div
+                {/* <div
                   className={`${
                     subHeading === sublink.name ? 'open-sublink' : 'sublink'
                   }`}
@@ -43,7 +50,7 @@ const MobileNavLinks = (props) => {
                       <Link href={slink.link}>{slink.name}</Link>
                     </li>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           );

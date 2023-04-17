@@ -39,7 +39,7 @@ const AuthForm = (props) => {
   const login = (token, route) => {
     const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000;
     ctx.login(token, expirationTime);
-    router.replace(route);
+    router.push(route);
   }
 
   const submitAdminHandler = async (event) => {

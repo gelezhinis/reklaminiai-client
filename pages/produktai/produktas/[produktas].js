@@ -20,7 +20,7 @@ function ProductPage(props) {
         setIsLoading(false);
       })
       .catch((err) => console.log(err.message));
-  }, [productId]);
+  }, [productId, API]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -35,7 +35,7 @@ export async function getStaticProps(context) {
   const prodId = params.produktas;
 
   const response = await fetch(
-    `${API}/produktai/produktas/${prodId}`
+    `${process.env.NEXT_PUBLIC_API_URL}/produktai/produktas/${prodId}`
   );
 
   const product = await response.json();
@@ -50,7 +50,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(`${API}/produktai`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/produktai`);
   const products = await response.json();
 
   // const pathsWithParams = products.map(prod => ({params: {kategorija: prod.category, subkategorija: prod.subcategory, produktas: prod.id}}));

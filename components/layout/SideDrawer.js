@@ -2,10 +2,9 @@ import React, { useContext } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import {Context} from '../../store/context';
+import { Context } from '../../store/context';
 import SocialLinks from '../ui/SocialLinks';
 import MobileNavLinks from './MobileNavLinks';
-
 
 const SideDrawer = ({ show, onSideDrawerClick }) => {
   const { isAuthenticated, admin, logout } = useContext(Context);
@@ -24,33 +23,44 @@ const SideDrawer = ({ show, onSideDrawerClick }) => {
 
   return (
     <nav className={drawerClasses}>
+      <Link onClick={onSideDrawerClick} href={'/'}>
+        <div className="logo">
+          <span>Rek</span>lami<span>niai</span>
+        </div>
+      </Link>
       <ul>
         <div className="side-drawer-nav">
-          <Link onClick={onSideDrawerClick} href={'/'}>
-            <div className="logo"><span>Rek</span>lami<span>niai</span></div>
-          </Link>
           {/* <Link onClick={onSideDrawerClick} href={'/'}>
             Produktai
           </Link> */}
           <MobileNavLinks onProductClick={onSideDrawerClick} />
-          <Link
-            onClick={onSideDrawerClick}
-            href={'/kontaktai'}
-          >
+          <Link onClick={onSideDrawerClick} href={'/kontaktai'}>
             Kontaktai
           </Link>
-          {(!admin && !isAuthenticated) && <li><Link onClick={onSideDrawerClick} href={'/authenticate'}>Prisijungti</Link></li>}
-          {(!admin && isAuthenticated) && <li><div onClick={logoutHandler}>Atsijungti</div></li>}
+          {!admin && !isAuthenticated && (
+            <li>
+              <Link onClick={onSideDrawerClick} href={'/authenticate'}>
+                Prisijungti
+              </Link>
+            </li>
+          )}
+          {!admin && isAuthenticated && (
+            <li>
+              <div onClick={logoutHandler}>Atsijungti</div>
+            </li>
+          )}
           {admin && (
-              <li>
-                <Link onClick={onSideDrawerClick} href={'/admin'}>Admin</Link>
-              </li>
-            )}
-            {admin && (
-              <li>
-                <button onClick={logoutHandler}>Logout</button>
-              </li>
-            )}
+            <li>
+              <Link onClick={onSideDrawerClick} href={'/admin'}>
+                Admin
+              </Link>
+            </li>
+          )}
+          {admin && (
+            <li>
+              <button onClick={logoutHandler}>Logout</button>
+            </li>
+          )}
           {/* {isAuthenticated && (
             <Link
               onClick={onSideDrawerClick}

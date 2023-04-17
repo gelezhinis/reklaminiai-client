@@ -9,7 +9,8 @@ function CategoriesPage() {
 
   return (
     <>
-      {!ctx.isMobileDevice && <CategoriesList links={links[0].sublinks} linksWithoutSubs={linksWithoutSubs} />}
+      {/* {!ctx.isMobileDevice && <CategoriesList links={links[0].sublinks} linksWithoutSubs={linksWithoutSubs} />} */}
+      <CategoriesList links={links[0].sublinks} linksWithoutSubs={linksWithoutSubs} />
     </>
   );
 }

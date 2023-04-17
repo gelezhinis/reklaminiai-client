@@ -26,7 +26,7 @@ function SubcategoryPage(props) {
         setIsLoading(false);
       })
       .catch((err) => console.log(err.emessage));
-  }, [category, subcategory]);
+  }, [category, subcategory, API]);
 
   const openProductHandler = (...props) => {
     const { id } = props[0];
@@ -64,19 +64,24 @@ export default SubcategoryPage;
 export async function getStaticProps(context) {
   const { params } = context;
 
-  const response = await fetch(
-    `${API}/produktai/${params.kategorija}/${params.subkategorija}`
-  );
-  const products = await response.json();
-
-  return {
-    props: {
-      prodCategory: params.kategorija,
-      prodSubcategory: params.subkategorija,
-      products: products,
-    },
-    revalidate: 600,
-  };
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/produktai/${params.kategorija}/${params.subkategorija}`
+    );
+    const products = await response.json();
+  
+    return {
+      props: {
+        prodCategory: params.kategorija,
+        prodSubcategory: params.subkategorija,
+        products: products,
+      },
+      revalidate: 600,
+    };
+  } catch(err) {
+    console.log(err.message);
+  }
+  
 }
 
 export async function getStaticPaths() {
@@ -89,7 +94,7 @@ export async function getStaticPaths() {
   //   params: { subkategorija: subcateg },
   // }));
 
-  const response = await fetch(`${API}/produktai`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/produktai`);
   const products = await response.json();
 
   
