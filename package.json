@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "config": "^3.3.9",
     "dotenv": "^16.0.3",
     "next": "13.1.1",

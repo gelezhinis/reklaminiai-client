@@ -25,7 +25,8 @@
 }
 
 .social a:hover {
-  color: #4622a8;
+  /* color: #4622a8; */
+  color: black;
   background-color: #ffc400;
   cursor: pointer;
   transition: all 0.4s ease-in;
