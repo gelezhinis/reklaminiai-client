@@ -61,7 +61,7 @@ const SingleProduct = (props) => {
             {price2 && <p>{price2}</p>}
             {price3 && <p>{price3}</p>}
             {price4 && <p>{price4}</p>}
-          </div> : <p>Norėdami matyti kainas, prisijungite.</p>}
+          </div> : <p>Norėdami matyti kainas, prisijunkite.</p>}
           <p>{description}</p>
         </div>
         {ctx.admin && (

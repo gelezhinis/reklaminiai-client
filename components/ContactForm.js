@@ -40,10 +40,10 @@ const ContactForm = props => {
         <div className={classes.contact_left}>
           <h1 className={classes.contact_title}>Susisiekite su mumis.</h1>
           <div className={classes.contact_info}>
-            <div className={classes.contact_info_item}>
+            {/* <div className={classes.contact_info_item}>
               <FaAddressBook />
               <h5>Karolis Balčiūnas</h5>
-            </div>
+            </div> */}
             <div className={classes.contact_info_item}>
               <FaPhone />
               <h5>+370 687 36626</h5>
@@ -52,10 +52,10 @@ const ContactForm = props => {
               <FaEnvelope />
               <h5>info@myprint.lt</h5>
             </div>
-            <div className={classes.contact_info_item}>
+            {/* <div className={classes.contact_info_item}>
               <FaMapMarkedAlt />
               <h5>Lelijų g. 16, 60000 Alytus</h5>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={classes.contact_right}>

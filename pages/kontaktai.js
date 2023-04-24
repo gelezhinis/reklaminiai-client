@@ -1,4 +1,4 @@
-import ContactForm from "../components/ui/ContactForm";
+import ContactForm from "../components/ContactForm";
 
 function ContactPage() {
   return (
