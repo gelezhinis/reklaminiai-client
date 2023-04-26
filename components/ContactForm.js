@@ -51,7 +51,6 @@ const ContactForm = props => {
             <div className={classes.contact_info_item}>
               <FaEnvelope />
               <h5>info@myprint.lt</h5>
-              <h6>Testing... Works fine!</h6>
             </div>
             {/* <div className={classes.contact_info_item}>
               <FaMapMarkedAlt />
