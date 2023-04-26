@@ -48,8 +48,9 @@
   width: 49%;
   height: 50px;
   border: none;
-  border: 1px solid black;
-  border-radius: 4px;
+  border-bottom: 1px solid #666;
+  /* border-radius: 4px; */
+  background-color: inherit;
   margin: 10px 0;
   margin-right: 5px;
   font-size: 14px;
@@ -61,32 +62,32 @@
   margin: 10px 0;
   padding: 5px 0;
   font-size: 14px;
+  background-color: inherit;
   padding-left: 10px;
-  border: 1px solid black;
-  border-radius: 4px;
+  border: 1px solid #666;
+  /* border-radius: 4px; */
 }
 
 .contact_button {
-  border: 1px solid var(--secondary-dark);
+  /* border: 1px solid #4622a8; */
+  border: 0;
   border-radius: 4px;
   font: inherit;
   padding: 8px;
-  background-color: #fff;
-  color: var(--secondary-dark);
+  background-color: #4622a8;
+  color: #fff;
   cursor: pointer;
   margin-top: 1rem;
 }
 
 .contact_button:hover {
-  color: var(--primary);
-  background-color: #4622a8;
+  background-color: #765dbd;
   cursor: pointer;
-  color: #fff;
 }
 
 .contact_right input:focus {
   outline: none;
-  border: 1px solid var(--accent);
+  border-bottom: 1px solid #4622a8;
 }
 
 .contact_right input:focus::placeholder {
@@ -97,7 +98,7 @@
 
 .contact_right textarea:focus {
   outline: none;
-  border: 1px solid var(--accent);
+  border: 1px solid #4622a8;
 }
 
 .thank {
