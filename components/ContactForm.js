@@ -52,7 +52,7 @@ const ContactForm = props => {
               <FaEnvelope />
               <h5>info@myprint.lt</h5>
             </div>
-            <h1>Hmmmm...</h1>
+            <h1>Hmmm...</h1>
             {/* <div className={classes.contact_info_item}>
               <FaMapMarkedAlt />
               <h5>Lelijų g. 16, 60000 Alytus</h5>
