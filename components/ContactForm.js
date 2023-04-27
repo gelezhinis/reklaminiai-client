@@ -50,7 +50,7 @@ const ContactForm = props => {
             </div>
             <div className={classes.contact_info_item}>
               <FaEnvelope />
-              <h5>info@myprint.lt</h5>
+              <h5>info@reklaminiai.lt</h5>
             </div>
             {/* <div className={classes.contact_info_item}>
               <FaMapMarkedAlt />
@@ -61,7 +61,7 @@ const ContactForm = props => {
         <div className={classes.contact_right}>
           <p className={classes.contact_desc}>
             Mielai prašome susisiekti su
-            mumis bet kuriuo metu ir mes aptarsime viską kas Jūs domina.
+            mumis bet kuriuo metu ir mes aptarsime viską kas Jus domina.
           </p>
           <form ref={formRef} onSubmit={handleSubmit}>
             <input type="text" name="user_name" placeholder="Vardas" value={name} onChange={e => setName(e.target.value)} />
