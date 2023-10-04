@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-// Comment
 class ErrorBoundary extends React.Component {
   state = {hasError: false}
 
