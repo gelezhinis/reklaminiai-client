@@ -7,7 +7,6 @@ import FormCard from './ui/FormCard';
 
 import classes from './AdminForm.module.css';
 
-
 const AdminForm = ({ product }) => {
   const [selectedCategory, setSelectedCategory] = useState([]);
   const [isEditing, setIsEditing] = useState(false);
@@ -18,6 +17,7 @@ const AdminForm = ({ product }) => {
 
   const categoryInput = useRef();
   const subcategoryInput = useRef();
+  // const productIdInput = useRef();
   const titleInput = useRef();
   const price1Input = useRef();
   const price2Input = useRef();
@@ -27,6 +27,12 @@ const AdminForm = ({ product }) => {
   const price6Input = useRef();
   const descriptionInput = useRef();
   const imagesInput = useRef();
+
+  let timer;
+
+  useEffect(() => {
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (product) {
@@ -68,6 +74,7 @@ const AdminForm = ({ product }) => {
       // productId = product.id;
       productSubcategory = product.subcategory;
     }
+    // const productId = productIdInput.current.value;
     const productTitle = titleInput.current.value;
     const productPrice1 = price1Input.current.value;
     const productPrice2 = price2Input.current.value;
@@ -140,6 +147,7 @@ const AdminForm = ({ product }) => {
     if (selectedCategory.length > 1) {
       subcategoryInput.current.value = '';
     }
+    // productIdInput.current.value = '';
     titleInput.current.value = '';
     price1Input.current.value = '';
     price2Input.current.value = '';
@@ -150,6 +158,39 @@ const AdminForm = ({ product }) => {
     descriptionInput.current.value = '';
     imagesInput.current.value = '';
   };
+
+  const getDataFromFileHandler = async (event) => {
+    const prodId = event.target.value;
+
+    clearTimeout(timer);
+    
+    timer = setTimeout(() => {
+      fetch(`${API}/admin/get-data`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${ctx.token}`,
+        },
+        body: JSON.stringify({id: prodId})
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Galbut nera tokio id, arba tep kazkas negerai.')
+          }
+          return response.json();
+        })
+        .then(responseData => {
+          console.log('GAUTA DATA', responseData);
+          titleInput.current.value = responseData.data.title;
+          price1Input.current.value = responseData.data.price1;
+          price2Input.current.value = responseData.data.price2;
+          price3Input.current.value = responseData.data.price3;
+          // price4Input.current.value = product.price4;
+          descriptionInput.current.value = responseData.data.description;
+        })
+        .catch(err => console.log(err.message));
+    }, 2000);
+  }
 
   return (
     <FormCard style={{marginTop: '0.5rem'}}>
@@ -181,7 +222,7 @@ const AdminForm = ({ product }) => {
               <option value="kiti">Kiti</option>
             </select>
           </div>
-          {selectedCategory.length > 1 && (
+          {selectedCategory.length > 1 ? (
             <div className={classes.control}>
               <select name="subcategory" ref={subcategoryInput}>
                 <option value="">-- Pasirink Produkto Kategorija --</option>
@@ -194,13 +235,21 @@ const AdminForm = ({ product }) => {
                 })}
               </select>
             </div>
-          )}
-          <div className={classes.control}>
+          ) : null}
+          <div className={classes.id_title_container}>
+          <div className={classes.id_control}>
+            <label htmlFor="product-id">ID</label>
+            <input type="text" id="product-id" 
+            // ref={productIdInput} 
+            onChange={getDataFromFileHandler} />
+          </div>
+          <div className={classes.title_control}>
             <label htmlFor="title">Pavadinimas</label>
             <input type="text" id="title" required ref={titleInput} />
           </div>
+          </div>
           <div className={classes.control}>
-            <label htmlFor="price">Kaina</label>
+            <label htmlFor="price">Kainos</label>
             <input type="text" id="price1" required ref={price1Input} />
             <input type="text" id="price2" ref={price2Input} />
             <input type="text" id="price3" ref={price3Input} />

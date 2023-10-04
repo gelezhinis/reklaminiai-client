@@ -23,6 +23,9 @@ const AuthForm = (props) => {
 
   const ctx = useContext(Context);
 
+  console.log('API', API);
+  console.log('AuthFormProps', props);
+
   useEffect(() => {
     setError(null);
   }, []);
@@ -89,7 +92,8 @@ const AuthForm = (props) => {
         }
       })
       .catch((err) => {
-        alert(err.message);
+        console.log(err.message);
+        // alert(err.message);
       });
   };
 
