@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps: 
     - uses: actions/checkout@v3
@@ -17,6 +17,6 @@ jobs:
       with:
         node-version: ${{matrix.node-version}}
     - run: 
-        npm install -g next
+        # npm install -g next
         npm run build
 
