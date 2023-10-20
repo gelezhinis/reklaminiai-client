@@ -9,8 +9,8 @@ on:
 jobs:
   # build:
   push:
-    # runs-on: ubuntu-22.04
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
+    # runs-on: self-hosted
 
     steps: 
     - uses: actions/checkout@v3
