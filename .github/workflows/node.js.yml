@@ -7,43 +7,6 @@ on:
     branches: [main]
 
 jobs:
-  # build:
-  #   # runs-on: ubuntu-22.04
-  #   runs-on: self-hosted
-
-  #   steps: 
-  #   - uses: actions/checkout@v3
-  #   - name: Use Node.js ${{matrix.node-version}}
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{matrix.node-version}}
-  #   - run: 
-  #       rm -rf node_modules/
-  #       npm i
-  #       npm run build
-  #   # - run: rm -rf node_modules/
-  #   # - run: npm ci
-  #   # - run: npm run build
-
-  create-envfile:
- 
-    runs-on: self-hosted
- 
-    steps:
-    - name: Make envfile
-      uses: SpicyPizza/create-envfile@v2.0
-      with:
-        # envkey_DEBUG: false
-        envkey_NEXT_PUBLIC_ADMIN_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8"
-        envkey_NEXT_PUBLIC_API_URL: "https://api.reklaminiai.lt"
-        # envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        # envkey_VARIABLE: ${{ vars.SOME_ACTION_VARIABLE }}
-        # some_other_variable: foobar
-        # directory: <directory_name>
-        file_name: .env
-        fail_on_empty: false
-        sort_keys: false
-
   build:
     # runs-on: ubuntu-22.04
     runs-on: self-hosted
@@ -54,6 +17,11 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{matrix.node-version}}
+    - name: Create .env file
+    - run: 
+      echo "NEXT_PUBLIC_ADMIN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8" > .env
+      echo "NEXT_PUBLIC_API_URL=https://api.reklaminiai.lt" >> .env
+    - name: Install Dependencies
     # - run: 
     #     rm -rf node_modules/
     #     npm i
@@ -61,4 +29,24 @@ jobs:
     - run: rm -rf node_modules/
     - run: npm ci
     - run: npm run build
+
+  # create-envfile:
+ 
+  #   runs-on: self-hosted
+ 
+  #   steps:
+  #   - name: Make envfile
+  #     uses: SpicyPizza/create-envfile@v2.0
+  #     with:
+  #       # envkey_DEBUG: false
+  #       envkey_NEXT_PUBLIC_ADMIN_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8"
+  #       envkey_NEXT_PUBLIC_API_URL: "https://api.reklaminiai.lt"
+  #       # envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  #       # envkey_VARIABLE: ${{ vars.SOME_ACTION_VARIABLE }}
+  #       # some_other_variable: foobar
+  #       # directory: <directory_name>
+  #       file_name: .env
+  #       fail_on_empty: false
+  #       sort_keys: false
+
 
