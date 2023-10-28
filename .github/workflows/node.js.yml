@@ -24,7 +24,7 @@ jobs:
 
   create-envfile:
  
-    runs-on: ubuntu-20.4
+    runs-on: self-hosted
  
     steps:
     - name: Make envfile
