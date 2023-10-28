@@ -19,6 +19,7 @@ jobs:
         node-version: ${{matrix.node-version}}
     - run: 
         # npm install -g next
+        npm cache clean --force
         npm i
         npm run build
 
@@ -30,13 +31,13 @@ jobs:
     - name: Make envfile
       uses: SpicyPizza/create-envfile@v2.0
       with:
-        envkey_DEBUG: false
+        # envkey_DEBUG: false
         envkey_NEXT_PUBLIC_ADMIN_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8"
         envkey_NEXT_PUBLIC_API_URL: "https://api.reklaminiai.lt"
-        envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        # envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
         # envkey_VARIABLE: ${{ vars.SOME_ACTION_VARIABLE }}
         # some_other_variable: foobar
-        directory: <directory_name>
+        # directory: <directory_name>
         file_name: .env
         fail_on_empty: false
         sort_keys: false
