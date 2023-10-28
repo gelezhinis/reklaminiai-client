@@ -19,6 +19,7 @@ jobs:
         node-version: ${{matrix.node-version}}
     - run: 
         # npm install -g next
-        npm i
+        # npm i --force
+        npm install npm@latest -g
         npm run build
 
