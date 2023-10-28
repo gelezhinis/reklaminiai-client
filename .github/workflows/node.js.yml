@@ -19,8 +19,8 @@ jobs:
         node-version: ${{matrix.node-version}}
     - name: Create .env file
       run: 
-      echo "NEXT_PUBLIC_ADMIN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8" > .env
-      echo "NEXT_PUBLIC_API_URL=https://api.reklaminiai.lt" >> .env
+        echo "NEXT_PUBLIC_ADMIN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8" > .env
+        echo "NEXT_PUBLIC_API_URL=https://api.reklaminiai.lt" >> .env
     - name: Install Dependencies
       run: 
         rm -rf node_modules/
