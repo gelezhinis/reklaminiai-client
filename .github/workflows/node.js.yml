@@ -20,11 +20,16 @@ jobs:
     - name: Create .env file
       run: 
         echo "NEXT_PUBLIC_ADMIN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8" > .env
-        echo "NEXT_PUBLIC_API_URL=https://api.reklaminiai.lt" >> .env
-    - name: Install Dependencies
+      run: 
+        echo "NEXT_PUBLIC_API_URL=https://api.reklaminiai.lt" > .env
+    - name: Removing node_modules folder
       run: 
         rm -rf node_modules/
+    - name: Installing dependencies
+      run: 
         npm i
+    - name: Building application
+      run:
         npm run build
     # - run: rm -rf node_modules/
     # - run: npm ci
