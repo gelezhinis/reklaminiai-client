@@ -17,9 +17,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{matrix.node-version}}
-    - name: Create .env file
+    - name: Create ADMIN TOKEN in .env file
       run: 
         echo "NEXT_PUBLIC_ADMIN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8" > .env
+    - name: Create API URL in .env file
       run: 
         echo "NEXT_PUBLIC_API_URL=https://api.reklaminiai.lt" > .env
     - name: Removing node_modules folder
