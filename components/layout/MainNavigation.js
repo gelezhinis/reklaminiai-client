@@ -21,7 +21,7 @@ function MainNavigation() {
         <nav>
           <ul>
             <li>
-              <Link href={'/produktai'}>Produktėliai</Link>
+              <Link href={'/produktai'}>Produkteeeeeeeeeliai</Link>
             </li>
             <li>
               <Link href={'/kontaktai'}>Kontaktai</Link>
