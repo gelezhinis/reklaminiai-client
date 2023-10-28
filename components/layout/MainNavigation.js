@@ -24,9 +24,6 @@ function MainNavigation() {
               <Link href={'/produktai'}>Produktai</Link>
             </li>
             <li>
-              <Link href={'/produktai'}>Bybuktai</Link>
-            </li>
-            <li>
               <Link href={'/kontaktai'}>Kontaktai</Link>
             </li>
             {(!ctx.admin && !ctx.isAuthenticated) && <li><Link href={'/authenticate'}>Prisijungti</Link></li>}
