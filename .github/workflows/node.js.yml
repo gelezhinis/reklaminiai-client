@@ -17,10 +17,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{matrix.node-version}}
-    - run: rm -rf node_modules/
-        # npm install -g next
-    - run: npm ci
-    - run: npm run build
+    - run: 
+        rm -rf node_modules/
+        npm i
+        npm run build
+    # - run: rm -rf node_modules/
+    # - run: npm ci
+    # - run: npm run build
 
   create-envfile:
  
