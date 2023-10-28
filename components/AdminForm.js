@@ -32,7 +32,7 @@ const AdminForm = ({ product }) => {
 
   useEffect(() => {
     return () => clearTimeout(timer);
-  }, []);
+  }, [timer]);
 
   useEffect(() => {
     if (product) {

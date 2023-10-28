@@ -1,5 +1,5 @@
 import React from 'react';
-
+// blablablabla
 import SocialLinks from '../ui/SocialLinks';
 import classes from './Footer.module.css';
 
