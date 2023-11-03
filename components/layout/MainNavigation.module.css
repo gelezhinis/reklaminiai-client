@@ -58,8 +58,7 @@
   font-size: 1.5rem;
 }
 
-.header button:hover,
-.header button:active {
+.header button:hover {
   cursor: pointer;
   color: #bbb0d8;
   border-color: #bbb0d8;

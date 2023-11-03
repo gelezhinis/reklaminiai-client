@@ -4,7 +4,7 @@ import classes from './ProductCard.module.css';
 const ProductCard = (props) => {
   const {title, price, description, imagesUrl} = props;
 
-  const {pr1, pr2, pr3, pr4} = price;
+  const {pr1, pr2, pr3, pr4, pr5, pr6} = price;
   const API = process.env.NEXT_PUBLIC_API_URL;
 
   return (

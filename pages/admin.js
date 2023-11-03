@@ -21,6 +21,8 @@ function AdminPage() {
         productPrice2,
         productPrice3,
         productPrice4,
+        productPrice5,
+        productPrice6,
         productDescription,
       } = router.query;
       setProductToEdit({
@@ -32,6 +34,8 @@ function AdminPage() {
         price2: productPrice2,
         price3: productPrice3,
         price4: productPrice4,
+        price5: productPrice5,
+        price6: productPrice6,
         description: productDescription,
       });
     }

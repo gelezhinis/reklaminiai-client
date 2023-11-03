@@ -37,7 +37,8 @@ const AdminForm = ({ product }) => {
   useEffect(() => {
     if (product) {
       setIsEditing(true);
-      console.log('ID', product.id);
+      // console.log('ID', product.id);
+      // console.log('PRODUCT', product);
       if (product.category in categories) {
         setSelectedCategory(categories[product.category]);
       }
@@ -185,6 +186,9 @@ const AdminForm = ({ product }) => {
           price1Input.current.value = responseData.data.price1;
           price2Input.current.value = responseData.data.price2;
           price3Input.current.value = responseData.data.price3;
+          price4Input.current.value = responseData.data.price4;
+          price5Input.current.value = responseData.data.price5;
+          price6Input.current.value = responseData.data.price6;
           // price4Input.current.value = product.price4;
           descriptionInput.current.value = responseData.data.description;
         })

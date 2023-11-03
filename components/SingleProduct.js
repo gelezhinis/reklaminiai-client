@@ -10,8 +10,10 @@ const SingleProduct = (props) => {
   const ctx = useContext(Context);
   const router = useRouter();
 
-  const { id, title, price1, price2, price3, price4, description, imageUrl } =
+  const { id, title, price1, price2, price3, price4, price5, price6, description, imageUrl } =
     props.product;
+
+  console.log('SingleProduct', props.product);
 
   const API = process.env.NEXT_PUBLIC_API_URL;
 
@@ -28,6 +30,8 @@ const SingleProduct = (props) => {
           productPrice2: price2,
           productPrice3: price3,
           productPrice4: price4,
+          productPrice5: price5,
+          productPrice6: price6,
           productDescription: description,
         },
       },
@@ -36,6 +40,7 @@ const SingleProduct = (props) => {
   };
 
   const productDeleteHandler = async () => {
+    console.log('SingleProduct ID', id);
     await fetch(`${API}/admin/delete-product/${id}`, {
       method: 'DELETE',
       headers: {
@@ -61,6 +66,8 @@ const SingleProduct = (props) => {
             {price2 && <p>{price2}</p>}
             {price3 && <p>{price3}</p>}
             {price4 && <p>{price4}</p>}
+            {price5 && <p>{price5}</p>}
+            {price6 && <p>{price6}</p>}
           </div> : <p>Norėdami matyti kainas, prisijunkite.</p>}
           <p>{description}</p>
         </div>
