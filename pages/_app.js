@@ -24,7 +24,8 @@ function MyApp({ Component, pageProps }) {
     return <></>;
   } else {
     return (
-      <ErrorBoundary fallback="An error occured!">
+      // <ErrorBoundary fallback="An error occured!">
+      <>
         <Head>
           <title>Reklaminiai.lt</title>
           <meta name="description" content="reklaminės prekės ir aksesuarai" />
@@ -34,7 +35,8 @@ function MyApp({ Component, pageProps }) {
             <Component {...pageProps} />
           </Layout>
         </ContextProvider>
-      </ErrorBoundary>
+        </>
+      // </ErrorBoundary>
     );
   }
 }
