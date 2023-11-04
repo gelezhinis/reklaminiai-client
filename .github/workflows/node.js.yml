@@ -12,6 +12,9 @@ jobs:
     runs-on: self-hosted
 
     steps: 
+    - name: Adjust Permissions
+      run: |
+        chmod -R 755 /var/www/reklaminiai/reklaminiai-client/_work/reklaminiai-client/reklaminiai-client/build/server/chunks
     - uses: actions/checkout@v3
     - name: Use Node.js ${{matrix.node-version}}
       uses: actions/setup-node@v3
@@ -21,9 +24,6 @@ jobs:
       run: |
         echo "NEXT_PUBLIC_ADMIN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8" > .env
         echo "NEXT_PUBLIC_API_URL=https://api.reklaminiai.lt" >> .env
-    - name: Adjust Permissions
-      run: |
-        chmod -R 755 /var/www/reklaminiai/reklaminiai-client/_work/reklaminiai-client/reklaminiai-client/build/server/chunks
     - name: Removing node_modules folder
       run: 
         rm -rf node_modules/
