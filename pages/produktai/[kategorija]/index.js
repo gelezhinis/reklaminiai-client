@@ -11,6 +11,9 @@ function CategoryPage(props) {
   const [fetchedProducts, setFetchedProducts] = useState(props.products);
   const router = useRouter();
 
+  console.log('CategoryPage', props);
+  console.log('Sublinks', sublinks);
+
   const filteredSubCat = sublinks.filter(sublink => sublink.category === props.prodCategory);
 
   const API = process.env.NEXT_PUBLIC_API_URL;
@@ -22,6 +25,7 @@ function CategoryPage(props) {
     fetch(`${API}/produktai/${category}`)
       .then((response) => response.json())
       .then((data) => {
+        console.log('ResponseData from CategoryPage fetch', data);
         setFetchedProducts(data);
         setIsLoading(false);
       })
@@ -71,6 +75,8 @@ export default CategoryPage;
 export async function getStaticProps(context) {
   const { req, res, params } = context;
 
+  console.log('CategoryPage Params', params);
+
   try {
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/produktai/${params.kategorija}`
@@ -100,7 +106,7 @@ export async function getStaticPaths() {
   for (const cat in categories) {
     availableCategories.push(cat);
   }
-  const pathsWithParams = availableCategories.map((categ) => ({
+  const pathsWithParams = availableCategories?.map((categ) => ({
     params: { kategorija: categ },
   }));
 

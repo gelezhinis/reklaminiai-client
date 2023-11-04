@@ -33,6 +33,7 @@ function ProductPage(props) {
 
 export async function getStaticProps(context) {
   const { params } = context;
+  console.log('Params', params);
 
   const prodId = params?.produktas;
 

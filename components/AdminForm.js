@@ -220,7 +220,7 @@ const AdminForm = ({ product }) => {
               <option value="juosteles">Juostelės</option>
               <option value="krepsiai">Krepšiai</option>
               <option value="atsvaitai">Atšvaitai</option>
-              <option value="kvokai">Kurjeriniai Vokai</option>
+              <option value="vokai">Kurjeriniai Vokai</option>
               <option value="uzrasines">Užrašinės</option>
               <option value="stendai">Tekstiniai Stendai</option>
               <option value="kiti">Kiti</option>
