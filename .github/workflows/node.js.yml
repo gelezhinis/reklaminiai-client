@@ -21,6 +21,9 @@ jobs:
       run: |
         echo "NEXT_PUBLIC_ADMIN_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8" > .env
         echo "NEXT_PUBLIC_API_URL=https://api.reklaminiai.lt" >> .env
+    - name: Adjust Permissions
+      run: |
+        chmod -R 755 /var/www/reklaminiai/reklaminiai-client/_work/reklaminiai-client/reklaminiai-client/build/server/chunks
     - name: Removing node_modules folder
       run: 
         rm -rf node_modules/
@@ -30,27 +33,4 @@ jobs:
     - name: Building application
       run:
         npm run build
-    # - run: rm -rf node_modules/
-    # - run: npm ci
-    # - run: npm run build
-
-  # create-envfile:
- 
-  #   runs-on: self-hosted
- 
-  #   steps:
-  #   - name: Make envfile
-  #     uses: SpicyPizza/create-envfile@v2.0
-  #     with:
-  #       # envkey_DEBUG: false
-  #       envkey_NEXT_PUBLIC_ADMIN_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3MzY5ODgwNCwiZXhwIjoxNjczNzAyNDA0fQ.lLoBICnvCARJYrISbzGsIGQurFW_e9NySot3V37lTy8"
-  #       envkey_NEXT_PUBLIC_API_URL: "https://api.reklaminiai.lt"
-  #       # envkey_SECRET_KEY: ${{ secrets.SECRET_KEY }}
-  #       # envkey_VARIABLE: ${{ vars.SOME_ACTION_VARIABLE }}
-  #       # some_other_variable: foobar
-  #       # directory: <directory_name>
-  #       file_name: .env
-  #       fail_on_empty: false
-  #       sort_keys: false
-
-
+   
