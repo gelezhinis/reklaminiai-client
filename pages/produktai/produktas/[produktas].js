@@ -8,8 +8,6 @@ function ProductPage(props) {
 
   const API = process.env.NEXT_PUBLIC_API_URL;
 
-  console.log('ProductPageProps', props);
-
   const productId = props?.productId;
 
   useEffect(() => {
@@ -33,7 +31,6 @@ function ProductPage(props) {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  console.log('Params', params);
 
   const prodId = params?.produktas;
 
