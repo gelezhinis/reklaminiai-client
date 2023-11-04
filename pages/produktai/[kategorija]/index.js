@@ -36,7 +36,7 @@ function CategoryPage(props) {
     const { id } = props[0];
     // console.log('ID', id);
     // console.log('URL', router);
-    // router.push(`${router.asPath}/${id}`);
+    // router.push(`${router.asPath}/${id}`)
     router.push(
       // {
       //   pathname: `${router.asPath}/${id}`,
