@@ -8,21 +8,21 @@ import {sublinks} from '../../../utils/subcategories';
 
 function CategoryPage(props) {
   const [isLoading, setIsLoading] = useState(false);
-  const [fetchedProducts, setFetchedProducts] = useState(props.products);
+  const [fetchedProducts, setFetchedProducts] = useState(props?.products);
   const router = useRouter();
 
   const filteredSubCat = sublinks.filter(sublink => sublink.category === props.prodCategory);
 
   const API = process.env.NEXT_PUBLIC_API_URL;
 
-  const category = props.prodCategory;
+  const category = props?.prodCategory;
 
   useEffect(() => {
     setIsLoading(true);
     fetch(`${API}/produktai/${category}`)
       .then((response) => response.json())
       .then((data) => {
-        // console.log('ResponseData from CategoryPage fetch', data);
+        console.log('ResponseData from CategoryPage fetch', data);
         setFetchedProducts(data);
         setIsLoading(false);
       })
