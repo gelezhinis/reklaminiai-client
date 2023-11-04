@@ -4,11 +4,13 @@ import SingleProduct from '../../../components/SingleProduct';
 
 function ProductPage(props) {
   const [isLoading, setIsLoading] = useState(false);
-  const [fetchedProduct, setFetchedProduct] = useState(props.product);
+  const [fetchedProduct, setFetchedProduct] = useState(props?.product);
 
   const API = process.env.NEXT_PUBLIC_API_URL;
 
-  const productId = props.productId;
+  console.log('ProductPageProps', props);
+
+  const productId = props?.productId;
 
   useEffect(() => {
     // console.log('USE_EFFECT');
@@ -32,7 +34,7 @@ function ProductPage(props) {
 export async function getStaticProps(context) {
   const { params } = context;
 
-  const prodId = params.produktas;
+  const prodId = params?.produktas;
 
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/produktai/produktas/${prodId}`
