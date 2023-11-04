@@ -14,7 +14,7 @@ jobs:
     steps: 
     - name: Adjust Permissions
       run: |
-        chmod -R 755 /var/www/reklaminiai/reklaminiai-client/_work/reklaminiai-client/reklaminiai-client/build/server/chunks
+        sudo chmod -R 755 /var/www/reklaminiai/reklaminiai-client/_work/reklaminiai-client/reklaminiai-client/build/server/chunks
     - uses: actions/checkout@v3
     - name: Use Node.js ${{matrix.node-version}}
       uses: actions/setup-node@v3
