@@ -6,14 +6,15 @@ export const links = [
       {
         name: 'Spaudos Darbai',
         sublink: [
-          { name: 'Lankstinukai', link: '/produktai/spauda/lankstinukai' },
+          { name: 'Lankstinukai', link: '/produktai/spauda/lankstinukai'},
           { name: 'Skrajutės', link: '/produktai/spauda/skrajutes' },
           { name: 'Plakatai', link: '/produktai/spauda/plakatai' },
           { name: 'Brošiūros', link: '/produktai/spauda/brosiuros' },
           { name: 'Bloknotai', link: '/produktai/spauda/bloknotai' },
           { name: 'Kortelės', link: '/produktai/spauda/korteles' },
         ],
-        path: '/produktai/spauda'
+        path: '/produktai/spauda',
+        imageUrl: '/img/categories/print.jpg'
       },
       {
         name: 'Rašymo Priemonės',
@@ -33,7 +34,8 @@ export const links = [
           },
           { name: 'Pieštukai', link: '/produktai/rasymo_priemones/piestukai' },
         ],
-        path: '/produktai/rasymo_priemones'
+        path: '/produktai/rasymo_priemones',
+        imageUrl: '/img/categories/writing.jpg'
       },
       {
         name: 'Apranga',
@@ -42,7 +44,8 @@ export const links = [
           { name: 'Džemperiai', link: '/produktai/apranga/dzemperiai' },
           { name: 'Kepurės', link: '/produktai/apranga/kepures' },
         ],
-        path: '/produktai/apranga'
+        path: '/produktai/apranga',
+        imageUrl: '/img/categories/outfit.jpg'
       },
 
       {
@@ -55,7 +58,8 @@ export const links = [
           { name: 'Pagrindai', link: '/produktai/veliavos/pagrindai' },
           { name: 'Vėliavos', link: '/produktai/veliavos/veliavos' },
         ],
-        path: '/produktai/veliavos'
+        path: '/produktai/veliavos',
+        imageUrl: '/img/categories/flags.jpg'
       },
       {
         name: 'Puodeliai',
@@ -64,7 +68,8 @@ export const links = [
           { name: 'Termo', link: '/produktai/puodeliai/termo' },
           { name: 'Gertuvės', link: '/produktai/puodeliai/gertuves' },
         ],
-        path: '/produktai/puodeliai'
+        path: '/produktai/puodeliai',
+        imageUrl: '/img/categories/mugs.jpg'
       },
       {
         name: 'Juostelės',
@@ -73,7 +78,8 @@ export const links = [
           { name: 'Pakabukai', link: '/produktai/juosteles/pakabukai' },
           { name: 'Apyrankės', link: '/produktai/juosteles/apyrankes' },
         ],
-        path: '/produktai/juosteles'
+        path: '/produktai/juosteles',
+        imageUrl: '/img/categories/bracelets.jpg'
       },
       {
         name: 'Krepšiai',
@@ -82,7 +88,8 @@ export const links = [
           { name: 'Popieriniai', link: '/produktai/juosteles/pakabukai' },
           { name: 'Kuprinės', link: '/produktai/juosteles/apyrankes' },
         ],
-        path: '/produktai/krepsiai'
+        path: '/produktai/krepsiai',
+        imageUrl: '/img/categories/bags.jpg'
       },
     ],
   },
@@ -92,21 +99,26 @@ export const linksWithoutSubs = [
   {
     name: 'Atšvaitai',
     path: '/produktai/atsvaitai',
+    imageUrl: '/img/categories/reflectors.jpg'
   },
   {
     name: 'Kurjeriniai Vokai',
     path: '/produktai/vokai',
+    imageUrl: '/img/categories/envelops.jpg'
   },
   {
     name: 'Užrašinės',
     path: '/produktai/uzrasines',
+    imageUrl: '/img/categories/notebooks.jpg'
   },
   {
     name: 'Tekstiniai Stendai',
     path: '/produktai/stendai',
+    imageUrl: '/img/categories/stands.jpg'
   },
   {
     name: 'Kiti',
     path: '/produktai/kiti',
+    imageUrl: '/img/categories/other.jpg'
   },
 ];

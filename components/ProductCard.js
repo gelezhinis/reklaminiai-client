@@ -18,10 +18,10 @@ const ProductCard = (props) => {
           />
         </div>
         <div className={classes.product_info}>
-          <p>{title}</p>
+          <h2>{title}</h2>
           {/* <p>nuo {pr4.split('EUR -')[0]} iki {pr1.split('-')[0]}</p> */}
-          <p>nuo {pr4.split('EUR -')[0]} EUR</p>
-          <p>{description}</p>
+          <h5>Kainos nuo {pr5.split('- ')[1]} (priklausomai nuo užsakyto kiekio)</h5>
+          {/* <p>{description}</p> */}
         </div>
       </div>
     </Card>

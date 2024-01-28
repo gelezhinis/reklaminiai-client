@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Context } from '../../store/context';
 import {links, linksWithoutSubs} from '../../utils/mobile-links';
 import CategoriesList from '../../components/CategoriesList';
+import {sublinks} from '../../utils/subcategories';
 
 function CategoriesPage() {
   const ctx = useContext(Context);

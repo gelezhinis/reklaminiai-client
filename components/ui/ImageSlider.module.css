@@ -1,8 +1,3 @@
-.main {
-  padding-top: 2%;
-  width: 50%;
-}
-
 .slider_wrapper {
   height: 50vh;
   width: 100%;
@@ -12,6 +7,6 @@
 .slider_wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center; 
 }

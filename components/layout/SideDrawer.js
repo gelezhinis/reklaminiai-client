@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import { Context } from '../../store/context';
 import SocialLinks from '../ui/SocialLinks';
 import MobileNavLinks from './MobileNavLinks';
+
+import Logo from '../../public/logo.png';
 
 const SideDrawer = ({ show, onSideDrawerClick }) => {
   const { isAuthenticated, admin, logout } = useContext(Context);
@@ -23,10 +26,11 @@ const SideDrawer = ({ show, onSideDrawerClick }) => {
 
   return (
     <nav className={drawerClasses}>
-      <Link onClick={onSideDrawerClick} href={'/'}>
-        <div className="logo">
+      <Link onClick={onSideDrawerClick} href={'/produktai'}>
+        {/* <div className="logo">
           <span>Rek</span>lami<span>niai</span>
-        </div>
+        </div> */}
+        <Image src={Logo} alt="logo" width={150} />
       </Link>
       <ul>
         <div className="side-drawer-nav">

@@ -1,6 +1,7 @@
 .side-drawer {
   height: 100%;
-  background-image: linear-gradient(76deg, #4622a8, #4b3d70);
+  /* background-image: linear-gradient(76deg, #4622a8, #4b3d70); */
+  background-image: linear-gradient(176deg, #bcaee6, #8f73e6);
   box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -57,7 +58,7 @@
 }
 
 .side-drawer img {
-  width: 80px;
+  margin-top: 1rem;
 }
 
 .side-drawer.open {
@@ -75,7 +76,8 @@
 }
 
 .side-drawer ul a {
-  color: white;
+  /* color: white; */
+  color: #4622a8;
   text-decoration: none;
   font-size: 1.4rem;
   margin: 0.5rem 0;

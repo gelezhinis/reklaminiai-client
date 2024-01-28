@@ -22,7 +22,7 @@ function CategoryPage(props) {
     fetch(`${API}/produktai/${category}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log('ResponseData from CategoryPage fetch', data);
+        // console.log('ResponseData from CategoryPage fetch', data);
         setFetchedProducts(data);
         setIsLoading(false);
       })
@@ -57,7 +57,7 @@ function CategoryPage(props) {
     products={fetchedProducts}
   />;
   } else {
-    content = <CategoriesList links={filteredSubCat[0].sublink} />;
+    content = <CategoriesList links={filteredSubCat[0].sublink} catImage={sublinks.imageUrl} />;
   }
 
   return (

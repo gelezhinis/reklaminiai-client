@@ -1,22 +1,32 @@
 import { useContext, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import { Context } from '../../store/context';
 import ProductsDrawer from './ProductsDrawer';
+import ProductsMenu from './ProductsMenu';
 import classes from './MainNavigation.module.css';
 
+import Logo from '../../public/logo.png'
+
 function MainNavigation() {
+  // const [showDrawer, setShowDrawer] = useState(false);
   const ctx = useContext(Context);
   const router = useRouter();
 
   const show = router.pathname.includes('produktai');
 
+  // const drawerOpenHandler = () => {
+  //   console.log('open');
+  // }
+
   return (
     <>
       <header className={classes.header}>
-        <Link href={'/'}>
-          <div className={classes.logo}><span>Rek</span>lami<span>niai</span></div>
+        <Link href={'/produktai'}>
+          {/* <div className={classes.logo}><span>Rek</span>lami<span>niai</span></div> */}
+          <Image src={Logo} alt="logo" width={200} />
         </Link>
         <nav>
           <ul>
@@ -44,7 +54,8 @@ function MainNavigation() {
           </ul>
         </nav>
       </header>
-      <ProductsDrawer show={show} />
+      <ProductsMenu show={show} />
+      {/* <ProductsDrawer show={showDrawer} /> */}
     </>
   );
 }

@@ -24,7 +24,6 @@ const AdminForm = ({ product }) => {
   const price3Input = useRef();
   const price4Input = useRef();
   const price5Input = useRef();
-  const price6Input = useRef();
   const descriptionInput = useRef();
   const imagesInput = useRef();
 
@@ -50,7 +49,6 @@ const AdminForm = ({ product }) => {
       price3Input.current.value = product.price3;
       price4Input.current.value = product.price4;
       price5Input.current.value = product.price5;
-      price6Input.current.value = product.price6;
       descriptionInput.current.value = product.description;
     }
   }, [product]);
@@ -82,7 +80,6 @@ const AdminForm = ({ product }) => {
     const productPrice3 = price3Input.current.value;
     const productPrice4 = price4Input.current.value;
     const productPrice5 = price5Input.current.value;
-    const productPrice6 = price6Input.current.value;
     const productDescription = descriptionInput.current.value;
 
     const formData = new FormData();
@@ -97,7 +94,6 @@ const AdminForm = ({ product }) => {
     formData.append('price3', productPrice3);
     formData.append('price4', productPrice4);
     formData.append('price5', productPrice5);
-    formData.append('price6', productPrice6);
     formData.append('description', productDescription);
     for (const file of selectedImages) {
       formData.append('images', file, file.name);
@@ -155,7 +151,6 @@ const AdminForm = ({ product }) => {
     price3Input.current.value = '';
     price4Input.current.value = '';
     price5Input.current.value = '';
-    price6Input.current.value = '';
     descriptionInput.current.value = '';
     imagesInput.current.value = '';
   };
@@ -182,14 +177,12 @@ const AdminForm = ({ product }) => {
         })
         .then(responseData => {
           console.log('GAUTA DATA', responseData);
-          titleInput.current.value = responseData.data.title;
+          titleInput.current.value = responseData.data.name;
           price1Input.current.value = responseData.data.price1;
           price2Input.current.value = responseData.data.price2;
           price3Input.current.value = responseData.data.price3;
           price4Input.current.value = responseData.data.price4;
           price5Input.current.value = responseData.data.price5;
-          price6Input.current.value = responseData.data.price6;
-          // price4Input.current.value = product.price4;
           descriptionInput.current.value = responseData.data.description;
         })
         .catch(err => console.log(err.message));
@@ -259,7 +252,6 @@ const AdminForm = ({ product }) => {
             <input type="text" id="price3" ref={price3Input} />
             <input type="text" id="price4" ref={price4Input} />
             <input type="text" id="price5" ref={price5Input} />
-            <input type="text" id="price6" ref={price6Input} />
           </div>
           <div className={classes.control}>
             <label htmlFor="description">Aprašymas</label>

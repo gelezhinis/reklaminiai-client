@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import ImageSlider from './ui/ImageSlider';
@@ -68,7 +69,7 @@ const SingleProduct = (props) => {
             {price4 && <p>{price4}</p>}
             {price5 && <p>{price5}</p>}
             {price6 && <p>{price6}</p>}
-          </div> : <p>Norėdami matyti kainas, prisijunkite.</p>}
+          </div> : <p>Norėdami matyti visas kainas, <Link href={'/authenticate'}><span>užsiregistruokite ir prisijunkite</span></Link>.</p>}
           <p>{description}</p>
         </div>
         {ctx.admin && (

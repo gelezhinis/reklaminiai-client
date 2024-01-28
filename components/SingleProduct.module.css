@@ -5,10 +5,10 @@
   height: 65vh;
   margin: 3rem auto;
   display: flex;
-  justify-content: space-around;
-  border-radius: 6px;
+  /* justify-content: space-around; */
+  /* border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  background-color: rgb(249, 237, 252);
+  background-color: rgb(249, 237, 252); */
 }
 
 .swiper_container {
@@ -24,6 +24,15 @@
   justify-content: space-between; */
   margin-bottom: 1rem;
   position: relative;
+}
+
+.info p span {
+  font-weight: 500;
+  color: #fa1a74;
+}
+
+.info p span:hover {
+  color: rgb(172, 101, 172);
 }
 
 .actions {

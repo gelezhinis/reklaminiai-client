@@ -1,0 +1,36 @@
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.cardTitle {
+  border: 1px solid #fff;
+  border-radius: 8px;
+  height: 16%;
+  min-width: 80%;
+  margin: 0 20%;
+  font-size: 1.22rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 300;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-75%, -270%);
+}
+
+.card:hover h1 {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+
+@media screen and (max-width: 580px) {
+  .cardTitle {
+    font-size: 0.8rem;
+  }
+}

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
 html,
 body {
   padding: 0;
@@ -17,6 +19,8 @@ a {
 .main-slide {
   margin-top: 2%;
   width: 50%;
+  /* border: 4px #ccc solid;
+  border-radius: 5%; */
 }
 
 .carousel .slider-wrapper {

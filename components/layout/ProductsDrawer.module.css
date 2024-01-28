@@ -1,34 +1,83 @@
 .drawer {
-  height: 3rem;
-  background-color: #fa1a74;
-  transform: translateY(-100%);
+  height: calc(100vh - 4rem);
+  width: 400px;
+  background-color: #000;
+  transform: translateX(-100%);
   transition: transform 0.4s ease-out;
-  position: relative;
+  position: fixed;
+  z-index: 9;
+  bottom: 0;
 }
 
 .drawer.open {
-  height: 3.5rem;
-  transform: translateY(0%);
+  height: calc(100vh - 4rem);
+  transform: translateX(0%);
   z-index: 9;
-  /* position: absolute; */
+}
+
+.image {
+  max-width: 400px;
+}
+
+.drawerListContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 1rem;
 }
 
 .drawerList {
-  margin-left: -2.5rem;
   list-style: none;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: purple;
-  font-size: clamp(0.85rem, -0.875rem + 3vw, 1.15rem);
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #fff;
   margin-top: 0;
-  height: 100%;
+  padding-left: 1rem;
+  height: 400px;
 }
+
 .drawerList li {
-  text-align: center;
-  height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #222;
+}
+
+.drawerList li:last-child {
+  border-bottom: none;
+}
+
+.drawerList li li {
+  border-bottom: none;
+}
+
+.drawerList li label:hover {
+  cursor: pointer;
+}
+
+.drawerList li span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.drawerList li span span {
+  vertical-align: middle;
+  padding-left: 1rem;
+  border-bottom: none;
+}
+
+.icon {
+  transform: rotate(0);
+  transition: 0.3s transform ease-out;
+}
+
+.icon.iconRotate {
+  transform: rotate(180deg);
+  transition: 0.3s transform ease-out;
+}
+
+.drawerList li span:hover {
+  cursor: pointer;
 }
 
 .drawerList li a {
@@ -36,67 +85,82 @@
 }
 
 .drawerList li:hover {
-  color: rgb(172, 101, 172);
+  color: #c5c3c3;
 }
-
 
 /* ---------------- */
-/* .subDrawer {
-  height: 3rem;
-  background-color: rgb(85, 168, 224);
-  transform: translateY(-100%);
-  transition: transform 0.4s ease-out;
-  position: relative;
+.subMenu {
+  flex-direction: column;
+  /* background-color: #000; */
+  color: white;
+  font-size: 0.8rem;
+  width: 100%;
+  padding: 0.6rem 0;
+  display: none;
+  /* transition: opacity 0.4s ease-out, transform 0.4s ease-out; */
 }
-.subDrawer.open {
-  height: 3rem;
-  background-color: red;
-  transform: translateY(0%);
-  z-index: 9;
-}
-.subDrawerList {
-  list-style: none;
+
+.subMenu.openSub {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: purple;
-  font-size: clamp(0.7rem, -0.875rem + 3vw, 1.2rem);
-} */
+  padding-left: 0.5rem;
+}
 
+.subMenu li {
+  list-style: none;
+}
 
-.drawerList ul.subMenu,
-.drawerList ul.subMenu2 {
-  /* min-width: 100%; */
-  /* height: 2rem; */
-  /* height: 100%; */
+.exit {
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
+  color: #fff;
+  font-size: 2rem;
+  z-index: 100;
+}
+
+.exit .x {
+  position: relative;
+  height: 30px; /* this can be anything */
+  width: 30px; /* ...but maintain 1:1 aspect ratio */
+  margin-top: 0.7rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  background-color: rgba(11,18,27,0.8);
-  color: white;
-  display: none;
-  transform: translateY(-100%);
-  transition: transform 0.4s ease-out;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.exit .x::before,
+.exit .x::after {
   position: absolute;
-  z-index: 5;
-  /* left: 0; */
+  content: '';
+  width: 100%;
+  height: 4px; /* cross thickness */
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
 }
 
-.drawerList ul.subMenu, 
-.drawerList ul.subMenu2 {
-  top: 55px;
+.exit .x::before {
+  transform: rotate(45deg);
 }
 
-.drawerList ul.subMenu li,
-.drawerList ul.subMenu2 li {
-  list-style: none;
+.exit .x::after {
+  transform: rotate(-45deg);
 }
-.drawerList li:hover ul.subMenu,
-.drawerList li:hover ul.subMenu2 {
-  display: flex;
-  transform: translateY(0%);
-  padding: 0.5rem 2rem;
-  margin-left: -2.5rem;
+
+.exit:hover .x::before {
+  transform: rotate(135deg);
+}
+
+.exit:hover .x::after {
+  transform: rotate(45deg);
+}
+
+.exit:hover .x {
+  transform: rotate(90deg);
+}
+
+.exit:hover {
+  cursor: pointer;
 }
 
 

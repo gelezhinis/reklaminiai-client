@@ -2,13 +2,13 @@ export const sublinks = [
   {
     category: 'spauda',
     sublink: [
-      { name: 'Lankstinukai', path: '/produktai/spauda/lankstinukai' },
-      { name: 'Skrajutės', path: '/produktai/spauda/skrajutes' },
-      { name: 'Plakatai', path: '/produktai/spauda/plakatai' },
-      { name: 'Brošiūros', path: '/produktai/spauda/brosiuros' },
-      { name: 'Bloknotai', path: '/produktai/spauda/bloknotai' },
-      { name: 'Kortelės', path: '/produktai/spauda/korteles' },
-    ]
+      { name: 'Lankstinukai', path: '/produktai/spauda/lankstinukai', imageUrl: '/img/categories/subcategories/lankst.png' },
+      { name: 'Skrajutės', path: '/produktai/spauda/skrajutes', imageUrl: '/img/categories/subcategories/skraj.jpg' },
+      { name: 'Plakatai', path: '/produktai/spauda/plakatai', imageUrl: '/img/categories/subcategories/plak.jpg' },
+      { name: 'Brošiūros', path: '/produktai/spauda/brosiuros', imageUrl: '/img/categories/subcategories/bros.jpg' },
+      { name: 'Bloknotai', path: '/produktai/spauda/bloknotai', imageUrl: '/img/categories/subcategories/blok.png' },
+      { name: 'Kortelės', path: '/produktai/spauda/korteles', imageUrl: '/img/categories/subcategories/kort.jpg' },
+    ],
   },
   {
     category: 'rasymo_priemones',
@@ -27,7 +27,7 @@ export const sublinks = [
         path: '/produktai/rasymo_priemones/komplektai',
       },
       { name: 'Pieštukai', path: '/produktai/rasymo_priemones/piestukai' },
-    ]
+    ],
   },
   {
     category: 'apranga',
