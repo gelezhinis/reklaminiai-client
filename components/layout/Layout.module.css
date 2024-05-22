@@ -2,11 +2,10 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: 100%;
   /* background-image: radial-gradient(#f3f1fa, #ebe6fc, #d5c8fa,  #cfbefd); */
   /* background-color: rgba(245, 245, 245, 0.9); */
   background-color: rgb(245, 245, 245);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 .main {
@@ -14,8 +13,17 @@
   /* width: 90%; */
   width: 100%;
   flex: 1;
-  /* padding-bottom: 4rem; */
-  /* min-height: calc(100vh - 2.7rem - 4rem - 4.1rem ); */
-  /* display: flex; */
-  /* justify-content: center; */
+  /* padding-bottom: 4rem;
+  min-height: calc(100vh - 2.7rem - 4rem - 4.1rem);
+  display: flex;
+  justify-content: center; */
+}
+
+@media screen and (max-width: 720px) {
+  .main {
+    padding-bottom: 4rem;
+  min-height: calc(100vh - 2.7rem - 4rem - 4.1rem);
+  display: flex;
+  justify-content: center;
+  }
 }

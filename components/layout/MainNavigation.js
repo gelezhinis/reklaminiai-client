@@ -25,24 +25,23 @@ function MainNavigation() {
     <>
       <header className={classes.header}>
         <Link href={'/produktai'}>
-          {/* <div className={classes.logo}><span>Rek</span>lami<span>niai</span></div> */}
-          <Image src={Logo} alt="logo" width={200} />
+          <Image src={Logo} alt="logo" width={200}/>
         </Link>
         <nav>
           <ul>
-            <li>
+            <li className={router.pathname === "/produktai" ? classes.active : ""}>
               <Link href={'/produktai'}>Produktai</Link>
             </li>
-            <li>
+            <li className={router.pathname === "/kontaktai" ? classes.active : ""}>
               <Link href={'/kontaktai'}>Kontaktai</Link>
             </li>
-            {(!ctx.admin && !ctx.isAuthenticated) && <li><Link href={'/authenticate'}>Prisijungti</Link></li>}
+            {(!ctx.admin && !ctx.isAuthenticated) && <li className={router.pathname === "/authenticate" ? classes.active : ""}><Link href={'/authenticate'}>Prisijungti</Link></li>}
             {(!ctx.admin && ctx.isAuthenticated) && <li><div className={classes.logout} onClick={ctx.logout}>Atsijungti</div></li>}
             {/* {!ctx.admin && <li>
               <Link href={'/authenticate'}>{ctx.isAuthenticated ? 'Atsijungti' : 'Prisijungti'}</Link>
             </li>} */}
             {ctx.admin && (
-              <li>
+              <li className={router.pathname === "/admin" ? classes.active : ""}>
                 <Link href={'/admin'}>Admin</Link>
               </li>
             )}

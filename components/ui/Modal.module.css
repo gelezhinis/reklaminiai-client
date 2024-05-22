@@ -15,6 +15,7 @@
   box-sizing: border-box;
   width: 80%;
   max-width: 700px;
+  margin-top: 4rem;
   transition: all 0.3s ease-in-out;
   animation: slide-down 300ms ease-out forwards;
 }
@@ -28,6 +29,10 @@
   height: 300px;
   overflow: scroll;
   overflow-x: hidden;
+}
+
+.message_container p {
+  padding: 0 1rem 0 0.5rem;
 }
 
 .checkbox_container {
@@ -98,7 +103,6 @@
     transform: translateY(0);
   }
 }
-
 
 @media screen and (max-width: 700px) {
   .modal {

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {Carousel} from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 import classes from './ImageSlider.module.css';
 // import "./styles.css";
@@ -17,18 +17,20 @@ const ImageSlider = (props) => {
     //     </div>
     //   })}
     // </Carousel>
-    <Carousel 
+    <Carousel
       className="main-slide"
       showStatus={false}
       swipeable={true}
       showArrows={false}
       dynamicHeight={true}
-      // autoPlay={true}
+      
     >
       {props.images.map((image, index) => {
-        return <div key={index} className={classes.slider_wrapper}>
-          <img src={`${API}/${image}`} alt="Image" />
-        </div>
+        return (
+          <div key={index} className={classes.slider_wrapper}>
+            <img src={`${API}/${image}`} alt="Image" />
+          </div>
+        );
       })}
     </Carousel>
   );

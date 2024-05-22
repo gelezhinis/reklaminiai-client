@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {FaBraille} from 'react-icons/fa6';
+import {FaList} from 'react-icons/fa6';
 
 import ProductsDrawer from './ProductsDrawer';
 import classes from './ProductsMenu.module.css';
@@ -23,8 +23,7 @@ const ProductsMenu = ({show}) => {
   return (
     <>
     <nav className={boxClasses} onClick={megaMenuHandler}>
-      {/* <div className={classes.menu}></div> */}
-      <FaBraille size={28} className={classes.icon} />
+      <FaList size={28} className={classes.icon} />
     </nav>
     <ProductsDrawer show={showDrawer} onDrawerClose={closeDrawerHandler} />
     </>

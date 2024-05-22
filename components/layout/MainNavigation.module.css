@@ -12,20 +12,6 @@
   position: fixed;
 }
 
-.logo {
-  /* font-size: 2rem;
-  color: #fa1a74;
-  font-weight: bold; */
-  width: 150px;
-}
-
-.logo span:nth-child(1) {
-  color: #ffc400;
-}
-.logo span:nth-child(2) {
-  color: #00c4fa;
-}
-
 .header ul {
   list-style: none;
   margin: 0;
@@ -34,38 +20,40 @@
   align-items: baseline;
 }
 
-.header li {
+.header ul li {
   margin-left: 3rem;
 }
 
-.header a {
+.header ul li:hover a,
+.header ul li:active a,
+.header ul li.active a {
+  border-left-color: #fed400;
+  color: #9177d8;
+}
+
+.header ul li a {
   text-decoration: none;
-  font-size: 1.5rem;
-  /* color: #fff; */
+  border-left: 3px solid #bbb0d8;
+  padding-left: 18px;
+  font-size: 1.2rem;
   color: #4622a8;
   font-weight: 400;
 }
 
-.header a:hover,
-.header a:active,
-.header a.active {
-  color: #bbb0d8;
-}
-
 .header button {
-  border: 2px solid #fff;
+  border: 2px solid #bbb0d8;
   border-radius: 5px;
   background: transparent;
-  padding: 0px 6px 4px 6px;
+  padding: 3px 6px 3px 6px;
   color: #fff;
   font: inherit;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .header button:hover {
   cursor: pointer;
   color: #bbb0d8;
-  border-color: #bbb0d8;
+  border-color: #fed400;
 }
 
 .logout {

@@ -68,7 +68,7 @@ const AdminForm = ({ product }) => {
     // let productId;
     if (!isEditing) {
       productSubcategory =
-      selectedCategory.length > 1 ? subcategoryInput.current.value : '';
+        selectedCategory.length > 1 ? subcategoryInput.current.value : '';
     } else {
       // productId = product.id;
       productSubcategory = product.subcategory;
@@ -159,7 +159,7 @@ const AdminForm = ({ product }) => {
     const prodId = event.target.value;
 
     clearTimeout(timer);
-    
+
     timer = setTimeout(() => {
       fetch(`${API}/admin/get-data`, {
         method: 'POST',
@@ -167,15 +167,15 @@ const AdminForm = ({ product }) => {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${ctx.token}`,
         },
-        body: JSON.stringify({id: prodId})
+        body: JSON.stringify({ id: prodId }),
       })
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
-            throw new Error('Galbut nera tokio id, arba tep kazkas negerai.')
+            throw new Error('Galbut nera tokio id, arba tep kazkas negerai.');
           }
           return response.json();
         })
-        .then(responseData => {
+        .then((responseData) => {
           console.log('GAUTA DATA', responseData);
           titleInput.current.value = responseData.data.name;
           price1Input.current.value = responseData.data.price1;
@@ -185,12 +185,12 @@ const AdminForm = ({ product }) => {
           price5Input.current.value = responseData.data.price5;
           descriptionInput.current.value = responseData.data.description;
         })
-        .catch(err => console.log(err.message));
+        .catch((err) => console.log(err.message));
     }, 2000);
-  }
+  };
 
   return (
-    <FormCard style={{marginTop: '0.5rem'}}>
+    <FormCard style={{ marginTop: '6rem' }}>
       <form
         method="POST"
         onSubmit={submitHandler}
@@ -234,16 +234,19 @@ const AdminForm = ({ product }) => {
             </div>
           ) : null}
           <div className={classes.id_title_container}>
-          <div className={classes.id_control}>
-            <label htmlFor="product-id">ID</label>
-            <input type="text" id="product-id" 
-            // ref={productIdInput} 
-            onChange={getDataFromFileHandler} />
-          </div>
-          <div className={classes.title_control}>
-            <label htmlFor="title">Pavadinimas</label>
-            <input type="text" id="title" required ref={titleInput} />
-          </div>
+            <div className={classes.id_control}>
+              <label htmlFor="product-id">ID</label>
+              <input
+                type="text"
+                id="product-id"
+                // ref={productIdInput}
+                onChange={getDataFromFileHandler}
+              />
+            </div>
+            <div className={classes.title_control}>
+              <label htmlFor="title">Pavadinimas</label>
+              <input type="text" id="title" required ref={titleInput} />
+            </div>
           </div>
           <div className={classes.control}>
             <label htmlFor="price">Kainos</label>

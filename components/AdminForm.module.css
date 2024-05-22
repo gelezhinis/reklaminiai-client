@@ -19,8 +19,6 @@
   margin-bottom: 0.5rem;
 }
 
-
-
 .spinner {
   height: calc(100vh - 3.5rem);
   display: flex;
@@ -33,7 +31,7 @@
   height: 2rem;
   border-radius: 4px;
 }
- 
+
 .control label,
 .id_control label,
 .title_control label,
@@ -126,7 +124,6 @@
   padding: 0.4rem 0.5rem 0.1rem 0.5rem;
 } */
 
-
 .actions button:hover {
   background-color: #4622a8;
   color: #fff;
@@ -137,8 +134,6 @@
   border: 2px solid var(--accent);
   padding: 0.34rem 0.44rem 0.06rem 0.44rem;
 }
-
-
 
 @media screen and (max-width: 530px) {
   .control_grid {

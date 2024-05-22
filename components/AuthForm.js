@@ -201,6 +201,7 @@ const AuthForm = (props) => {
 
   const resetPassHandler = async() => {
     const enteredEmail = emailInput.current.value;
+    console.log(enteredEmail);
     props.onShowMessage('Tolimesnė slaptažodžio keitimo instrukcija Jums išsiųsta el. paštu.', true);
     await fetch(`${API}/password-reset/${enteredEmail}`);
   };

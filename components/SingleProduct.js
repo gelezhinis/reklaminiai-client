@@ -11,10 +11,17 @@ const SingleProduct = (props) => {
   const ctx = useContext(Context);
   const router = useRouter();
 
-  const { id, title, price1, price2, price3, price4, price5, price6, description, imageUrl } =
-    props.product;
-
-  console.log('SingleProduct', props.product);
+  const {
+    id,
+    title,
+    price1,
+    price2,
+    price3,
+    price4,
+    price5,
+    description,
+    imageUrl,
+  } = props.product;
 
   const API = process.env.NEXT_PUBLIC_API_URL;
 
@@ -32,7 +39,6 @@ const SingleProduct = (props) => {
           productPrice3: price3,
           productPrice4: price4,
           productPrice5: price5,
-          productPrice6: price6,
           productDescription: description,
         },
       },
@@ -62,15 +68,24 @@ const SingleProduct = (props) => {
       <div className={classes.right}>
         <div className={classes.info}>
           <h3>{title}</h3>
-          {ctx.isAuthenticated ? <div>
-            <p>{price1}</p>
-            {price2 && <p>{price2}</p>}
-            {price3 && <p>{price3}</p>}
-            {price4 && <p>{price4}</p>}
-            {price5 && <p>{price5}</p>}
-            {price6 && <p>{price6}</p>}
-          </div> : <p>Norėdami matyti visas kainas, <Link href={'/authenticate'}><span>užsiregistruokite ir prisijunkite</span></Link>.</p>}
-          <p>{description}</p>
+          {ctx.isAuthenticated ? (
+            <div>
+              <p>{price1}</p>
+              {price2 && <p>{price2}</p>}
+              {price3 && <p>{price3}</p>}
+              {price4 && <p>{price4}</p>}
+              {price5 && <p>{price5}</p>}
+            </div>
+          ) : (
+            <p>
+              Norėdami matyti visas kainas,{' '}
+              <Link href={'/authenticate'}>
+                <span>užsiregistruokite ir prisijunkite</span>
+              </Link>
+              .
+            </p>
+          )}
+          <p className={classes.description}>{description}</p>
         </div>
         {ctx.admin && (
           <div className={classes.actions}>

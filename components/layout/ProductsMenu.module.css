@@ -25,7 +25,11 @@
 }
 
 .box:hover {
-  background-color: #6743ca;
+  background-color: #fed400;
+}
+
+.box:hover .icon {
+  color: #4622a8;
 }
 
 .icon {
