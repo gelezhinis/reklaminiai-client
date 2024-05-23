@@ -22,8 +22,7 @@
 @media screen and (max-width: 720px) {
   .main {
     padding-bottom: 4rem;
-  min-height: calc(100vh - 2.7rem - 4rem - 4.1rem);
-  display: flex;
-  justify-content: center;
+    min-height: calc(100vh - 2.7rem - 4rem - 4.1rem);
+    display: flex;
   }
 }

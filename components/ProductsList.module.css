@@ -1,10 +1,10 @@
 .container {
-  margin: 8rem 2rem;
+  margin-top: 8rem;
 }
 
 .list {
   display: grid;
-  padding-left: 0;
+  /* padding-left: 0; */
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
   place-items: center;
@@ -28,8 +28,14 @@
 @media screen and (max-width: 575px) {
   .list {
     grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10rem;
   }
   .list li {
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 390px) {
+  .list {
+    margin-left: 2rem;
   }
 }
